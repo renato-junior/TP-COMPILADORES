@@ -97,17 +97,17 @@ stmt                :   assign_stmt
                     |   function_ref_par
                     ;
 
-assign_stmt         :   IDENTIFIER ":=" expr                    {$1 = $3}
+assign_stmt         :   IDENTIFIER ":=" expr
                     ;
 
-if_stmt             :   "if" cond "then" stmt                   {if($2) $4}
-                    |   "if" cond "then" stmt "else" stmt       {if($2) $4 else $6}
+if_stmt             :   "if" cond "then" stmt
+                    |   "if" cond "then" stmt "else" stmt
                     ;
 
 cond                : expr
                     ;
 
-repeat_stmt         :   "repeat" stmt_list "until" expr         {while($4) $$2 }
+repeat_stmt         :   "repeat" stmt_list "until" expr
                     ;
 
 read_stmt           :   "read" "(" ident_list ")"
@@ -152,13 +152,13 @@ variable            :   Simple_variable_or_proc
 Simple_variable_or_proc :   IDENTIFIER
                         ;
 
-constant            :   INTEGER_CONSTANT    {const int}
-                    |   REAL_CONSTANT       {const float}
-                    |   CHAR_CONSTANT       {const char}
-                    |   boolean_constant    {const int}
+constant            :   INTEGER_CONSTANT
+                    |   REAL_CONSTANT
+                    |   CHAR_CONSTANT
+                    |   boolean_constant
                     ;
 
-boolean_constant    :   "false"             {false}
-                    |   "true"              {true}
+boolean_constant    :   "false"
+                    |   "true"
                     ;
 %%

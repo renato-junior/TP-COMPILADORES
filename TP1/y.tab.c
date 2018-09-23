@@ -1311,68 +1311,8 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 39:
-#line 100 "simple.y" /* yacc.c:1646  */
-    {(yyvsp[-2]) = (yyvsp[0])}
-#line 1318 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 40:
-#line 103 "simple.y" /* yacc.c:1646  */
-    {if((yyvsp[-2])) (yyvsp[0])}
-#line 1324 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 41:
-#line 104 "simple.y" /* yacc.c:1646  */
-    {if((yyvsp[-4])) (yyvsp[-2]) else (yyvsp[0])}
-#line 1330 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 43:
-#line 110 "simple.y" /* yacc.c:1646  */
-    {while((yyvsp[0])) (yyval)2 }
-#line 1336 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 64:
-#line 155 "simple.y" /* yacc.c:1646  */
-    {const int}
-#line 1342 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 65:
-#line 156 "simple.y" /* yacc.c:1646  */
-    {const float}
-#line 1348 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 66:
-#line 157 "simple.y" /* yacc.c:1646  */
-    {const char}
-#line 1354 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 67:
-#line 158 "simple.y" /* yacc.c:1646  */
-    {const int}
-#line 1360 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 68:
-#line 161 "simple.y" /* yacc.c:1646  */
-    {false}
-#line 1366 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-  case 69:
-#line 162 "simple.y" /* yacc.c:1646  */
-    {true}
-#line 1372 "y.tab.c" /* yacc.c:1646  */
-    break;
-
-
-#line 1376 "y.tab.c" /* yacc.c:1646  */
+      
+#line 1316 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

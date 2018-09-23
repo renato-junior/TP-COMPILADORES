@@ -6,7 +6,7 @@
 %}
 
 %%
-progam              :   program identifier ";" dec1_List compound_stmt
+progam              :   program IDENTIFIER ";" dec1_List compound_stmt
                     ;
 
 dec1_List           :   dec1_List ";" dec1
@@ -20,8 +20,8 @@ dec1                :   dcl_var
 dcl_var             :   ident_list ":" type
                     ;
 
-ident_list          :   ident_list "," identifier
-                    |   identifier
+ident_list          :   ident_list "," IDENTIFIER
+                    |   IDENTIFIER
                     ;
         
 type                :   integer
@@ -30,7 +30,7 @@ type                :   integer
                     |   char
                     ;
 
-dcl_proc            :   tipo_retornado "PROCEDURE" identifier espec_parametros corpo
+dcl_proc            :   tipo_retornado "PROCEDURE" IDENTIFIER espec_parametros corpo
                     ;
 
 tipo_retornado      :   integer
@@ -43,7 +43,7 @@ tipo_retornado      :   integer
 corpo               :   ":" dec1_List ";" compound_stmt id_return
                     ;
 
-id_return           :   identifier
+id_return           :   IDENTIFIER
                     |   /* empty */
 
 espec_parametros    :   "(" lista_de_parametros ")"
@@ -53,7 +53,7 @@ lista_de_parametros :   parametro
                     |   lista_de_parametros "," parametro
                     ;
 
-parametro           :   modo type ":" identifier
+parametro           :   modo type ":" IDENTIFIER
                     ;
 
 modo                :   value
@@ -76,7 +76,7 @@ stmt                :   assign_stmt
                     |   function_ref_par
                     ;
 
-assign_stmt         :   identifier ":=" expr                    {$1 = $3}
+assign_stmt         :   IDENTIFIER ":=" expr                    {$1 = $3}
                     ;
 
 if_stmt             :   "if" cond "then" stmt                   {if($2) $4}
@@ -115,7 +115,7 @@ factor_a            :   "-" factor
                     |   factor
                     ;
 
-factor              :   identifier
+factor              :   IDENTIFIER
                     |   constant
                     |   "(" expr ")"
                     |   "NOT" factor
@@ -128,12 +128,12 @@ function_ref_par    :   variable "(" expr_list ")"
 variable            :   Simple_variable_or_proc
                     ;
 
-Simple_variable_or_proc :   identifier
+Simple_variable_or_proc :   IDENTIFIER
                         ;
 
-constant            :   integer_constant    {const int}
-                    |   real_constant       {const float}
-                    |   char_constant       {const char}
+constant            :   INTEGER_CONSTANT    {const int}
+                    |   INTEGER_CONSTANT       {const float}
+                    |   CHAR_CONSTANT       {const char}
                     |   boolean_constant    {const int}
                     ;
 

@@ -24,16 +24,17 @@ cc lex.yy.c y.tab.c -obas.exe   # compile/link
 %token REAL_CONSTANT
 %token CHAR_CONSTANT
 
+
 %%
 
-program             :   "program" IDENTIFIER ";" dec1_List compound_stmt
+program             :   "program" IDENTIFIER ";" decl_list compound_stmt
                     ;
 
-dec1_List           :   dec1_List ";" dec1
-                    |   dec1
+decl_list           :   decl_list ";" decl
+                    |   decl
                     ;
 
-dec1                :   dcl_var
+decl                :   dcl_var
                     |   dcl_proc
                     ;
 
@@ -60,7 +61,7 @@ tipo_retornado      :   "integer"
                     |   %empty/* empty */
                     ;
 
-corpo               :   ":" dec1_List ";" compound_stmt id_return
+corpo               :   ":" decl_list ";" compound_stmt id_return
                     ;
 
 id_return           :   IDENTIFIER

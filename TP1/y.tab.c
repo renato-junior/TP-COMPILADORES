@@ -450,13 +450,13 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    29,    29,    32,    33,    36,    37,    40,    43,    44,
-      47,    48,    49,    50,    53,    56,    57,    58,    59,    60,
-      63,    66,    67,    70,    73,    74,    77,    80,    81,    84,
-      87,    88,    91,    92,    93,    94,    95,    96,    97,   100,
-     103,   104,   107,   110,   113,   116,   119,   120,   123,   124,
-     127,   128,   131,   132,   135,   136,   139,   140,   141,   142,
-     143,   146,   149,   152,   155,   156,   157,   158,   161,   162
+       0,    30,    30,    33,    34,    37,    38,    41,    44,    45,
+      48,    49,    50,    51,    54,    57,    58,    59,    60,    61,
+      64,    67,    68,    71,    74,    75,    78,    81,    82,    85,
+      88,    89,    92,    93,    94,    95,    96,    97,    98,   101,
+     104,   105,   108,   111,   114,   117,   120,   121,   124,   125,
+     128,   129,   132,   133,   136,   137,   140,   141,   142,   143,
+     144,   147,   150,   153,   156,   157,   158,   159,   162,   163
 };
 #endif
 
@@ -473,7 +473,7 @@ static const char *const yytname[] =
   "\"value\"", "\"reference\"", "\"begin\"", "\"end\"", "\":=\"", "\"if\"",
   "\"then\"", "\"else\"", "\"repeat\"", "\"until\"", "\"read\"",
   "\"write\"", "\"-\"", "\"NOT\"", "\"false\"", "\"true\"", "$accept",
-  "program", "dec1_List", "dec1", "dcl_var", "ident_list", "type",
+  "program", "decl_list", "decl", "dcl_var", "ident_list", "type",
   "dcl_proc", "tipo_retornado", "corpo", "id_return", "espec_parametros",
   "lista_de_parametros", "parametro", "modo", "compound_stmt", "stmt_list",
   "stmt", "assign_stmt", "if_stmt", "cond", "repeat_stmt", "read_stmt",
@@ -1540,7 +1540,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 164 "simple.y" /* yacc.c:1906  */
+#line 165 "simple.y" /* yacc.c:1906  */
 
 
 int yywrap(){

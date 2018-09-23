@@ -26,7 +26,7 @@ cc lex.yy.c y.tab.c -obas.exe   # compile/link
 
 %%
 
-program             :   program IDENTIFIER ";" dec1_List compound_stmt
+program             :   "program" IDENTIFIER ";" dec1_List compound_stmt
                     ;
 
 dec1_List           :   dec1_List ";" dec1
@@ -153,7 +153,7 @@ Simple_variable_or_proc :   IDENTIFIER
                         ;
 
 constant            :   INTEGER_CONSTANT    {const int}
-                    |   INTEGER_CONSTANT       {const float}
+                    |   REAL_CONSTANT       {const float}
                     |   CHAR_CONSTANT       {const char}
                     |   boolean_constant    {const int}
                     ;

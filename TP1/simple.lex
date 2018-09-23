@@ -29,6 +29,26 @@ CHAR_CONSTANT		"'"{LETTER}"'"
 
 %% /* Regras de Tradução */
 
+program			{ printf("program "); }
+integer			{ printf("integer "); }
+real			{ printf("real "); }
+boolean			{ printf("boolean "); }
+char			{ printf("char "); }
+PROCEDURE		{ printf("PROCEDURE "); }
+value			{ printf("value "); }
+reference		{ printf("reference "); }
+begin			{ printf("begin "); }
+end			{ printf("end "); }
+if			{ printf("if "); }
+then			{ printf("then "); }
+else			{ printf("else "); }
+repeat			{ printf("repeat "); }
+until			{ printf("until "); }
+read			{ printf("read "); }
+write			{ printf("write "); }
+not			{ printf("not "); }
+false			{ printf("false "); }
+true			{ printf("true "); }
 {RELOP}			{ printf("RELOP "); }
 {ADDOP}			{ printf("ADDOP "); }
 {MULOP}			{ printf("MULOP "); }

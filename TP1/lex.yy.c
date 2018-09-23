@@ -866,197 +866,197 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 33 "simple.lex"
-{ return PROGRAM; }
+{ printf("program "); return PROGRAM; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 34 "simple.lex"
-{ return INTEGER; }
+{ printf("integer "); return INTEGER; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 35 "simple.lex"
-{ return REAL; }
+{ printf("real "); return REAL; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 36 "simple.lex"
-{ return BOOLEAN; }
+{ printf("boolean "); return BOOLEAN; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 37 "simple.lex"
-{ return CHAR; }
+{ printf("char "); return CHAR; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 38 "simple.lex"
-{ return PROCEDURE; }
+{ printf("procedure "); return PROCEDURE; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 39 "simple.lex"
-{ return VALUE; }
+{ printf("value "); return VALUE; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 40 "simple.lex"
-{ return REFERENCE; }
+{ printf("reference "); return REFERENCE; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 41 "simple.lex"
-{ return BEGIN_T; }
+{ printf("begin "); return BEGIN_T; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 42 "simple.lex"
-{ return END; }
+{ printf("end "); return END_T; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 43 "simple.lex"
-{ return IF; }
+{ printf("if "); return IF_T; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 44 "simple.lex"
-{ return THEN; }
+{ printf("then "); return THEN_T; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 45 "simple.lex"
-{ return ELSE; }
+{ printf("else "); return ELSE_T; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 46 "simple.lex"
-{ return REPEAT; }
+{ printf("repeat "); return REPEAT_T; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 47 "simple.lex"
-{ return UNTIL; }
+{ printf("until "); return UNTIL_T; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 48 "simple.lex"
-{ return READ; }
+{ printf("read "); return READ_T; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 49 "simple.lex"
-{ return WRITE; }
+{ printf("write "); return WRITE_T; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 50 "simple.lex"
-{ return NOT; }
+{ printf("not "); return NOT_T; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 51 "simple.lex"
-{ return FALSE_T; }
+{ printf("false "); return FALSE_T; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 52 "simple.lex"
-{ return TRUE_T; }
+{ printf("true "); return TRUE_T; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 53 "simple.lex"
-{ return PONTOEVIRGULA; }
+{ printf("pontoevirgula "); return PONTOEVIRGULA; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 54 "simple.lex"
-{ return ABREPAR; }
+{ printf("abrepar "); return ABREPAR; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 55 "simple.lex"
-{ return FECHAPAR; }
+{ printf("fechapar "); return FECHAPAR; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 56 "simple.lex"
-{ return DOISPONTOS; }
+{ printf("doispontos "); return DOISPONTOS; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 57 "simple.lex"
-{ return VIRGULA; }
+{ printf("virgula "); return VIRGULA; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 58 "simple.lex"
-{ return MINUS; }
+{ printf("minus "); return MINUS; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 59 "simple.lex"
-{ return ASSIGNOP; }
+{ printf("assignop "); return ASSIGNOP; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 60 "simple.lex"
-{ return NOT_T; }
+{ printf("not "); return NOT_T; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 61 "simple.lex"
-{ return RELOP; }
+{ printf("relop "); return RELOP; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 62 "simple.lex"
-{ return ADDOP; }
+{ printf("addop "); return ADDOP; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 63 "simple.lex"
-{ return MULOP; }
+{ printf("mulop "); return MULOP; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 64 "simple.lex"
-{ return IDENTIFIER; }
+{ printf("identifier "); return IDENTIFIER; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 65 "simple.lex"
-{ return UNSIGNED_INTEGER; }
+{ printf("unsigned_integer "); return UNSIGNED_INTEGER; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 66 "simple.lex"
-{ return SIGN; }
+{ printf("sign "); return SIGN; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 67 "simple.lex"
-{ return SCALE_FACTOR; }
+{ printf("scale_factor "); return SCALE_FACTOR; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 68 "simple.lex"
-{ return UNSIGNED_REAL; }
+{ printf("unsigned_real "); return UNSIGNED_REAL; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 69 "simple.lex"
-{ return INTEGER_CONSTANT; }
+{ printf("integer_constant "); return INTEGER_CONSTANT; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 70 "simple.lex"
-{ return REAL_CONSTANT; }
+{ printf("real_constant "); return REAL_CONSTANT; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 71 "simple.lex"
-{ return CHAR_CONSTANT; }
+{ printf("char_constant "); return CHAR_CONSTANT; }
 	YY_BREAK
 case 40:
 /* rule 40 can match eol */

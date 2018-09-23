@@ -30,45 +30,45 @@ CHAR_CONSTANT		"'"{LETTER}"'"
 
 %% /* Regras de Tradução */
 
-program			{ return PROGRAM; }
-integer			{ return INTEGER; }
-real			{ return REAL; }
-boolean			{ return BOOLEAN; }
-char			{ return CHAR; }
-PROCEDURE		{ return PROCEDURE; }
-value			{ return VALUE; }
-reference		{ return REFERENCE; }
-begin			{ return BEGIN_T; }
-end			{ return END; }
-if			{ return IF; }
-then			{ return THEN; }
-else			{ return ELSE; }
-repeat			{ return REPEAT; }
-until			{ return UNTIL; }
-read			{ return READ; }
-write			{ return WRITE; }
-not			{ return NOT; }
-false			{ return FALSE_T; }
-true			{ return TRUE_T; }
-[;]			{ return PONTOEVIRGULA; }
-[(]			{ return ABREPAR; }
-[)]			{ return FECHAPAR; }
-[:]			{ return DOISPONTOS; }
-[,]			{ return VIRGULA; }
-[-]			{ return MINUS; }
-":="			{ return ASSIGNOP; }
-NOT			{ return NOT_T; }
-{RELOP}			{ return RELOP; }
-{ADDOP}			{ return ADDOP; }
-{MULOP}			{ return MULOP; }
-{IDENTIFIER}		{ return IDENTIFIER; }
-{UNSIGNED_INTEGER}	{ return UNSIGNED_INTEGER; }
-{SIGN}			{ return SIGN; }
-{SCALE_FACTOR}		{ return SCALE_FACTOR; }
-{UNSIGNED_REAL}		{ return UNSIGNED_REAL; }
-{INTEGER_CONSTANT}	{ return INTEGER_CONSTANT; }
-{REAL_CONSTANT}		{ return REAL_CONSTANT; }
-{CHAR_CONSTANT}		{ return CHAR_CONSTANT; }
+program			{ printf("program "); return PROGRAM; }
+integer			{ printf("integer "); return INTEGER; }
+real			{ printf("real "); return REAL; }
+boolean			{ printf("boolean "); return BOOLEAN; }
+char			{ printf("char "); return CHAR; }
+PROCEDURE		{ printf("procedure "); return PROCEDURE; }
+value			{ printf("value "); return VALUE; }
+reference		{ printf("reference "); return REFERENCE; }
+begin			{ printf("begin "); return BEGIN_T; }
+end			{ printf("end "); return END_T; }
+if			{ printf("if "); return IF_T; }
+then			{ printf("then "); return THEN_T; }
+else			{ printf("else "); return ELSE_T; }
+repeat			{ printf("repeat "); return REPEAT_T; }
+until			{ printf("until "); return UNTIL_T; }
+read			{ printf("read "); return READ_T; }
+write			{ printf("write "); return WRITE_T; }
+not			{ printf("not "); return NOT_T; }
+false			{ printf("false "); return FALSE_T; }
+true			{ printf("true "); return TRUE_T; }
+[;]			{ printf("pontoevirgula "); return PONTOEVIRGULA; }
+[(]			{ printf("abrepar "); return ABREPAR; }
+[)]			{ printf("fechapar "); return FECHAPAR; }
+[:]			{ printf("doispontos "); return DOISPONTOS; }
+[,]			{ printf("virgula "); return VIRGULA; }
+[-]			{ printf("minus "); return MINUS; }
+":="			{ printf("assignop "); return ASSIGNOP; }
+NOT			{ printf("not "); return NOT_T; }
+{RELOP}			{ printf("relop "); return RELOP; }
+{ADDOP}			{ printf("addop "); return ADDOP; }
+{MULOP}			{ printf("mulop "); return MULOP; }
+{IDENTIFIER}		{ printf("identifier "); return IDENTIFIER; }
+{UNSIGNED_INTEGER}	{ printf("unsigned_integer "); return UNSIGNED_INTEGER; }
+{SIGN}			{ printf("sign "); return SIGN; }
+{SCALE_FACTOR}		{ printf("scale_factor "); return SCALE_FACTOR; }
+{UNSIGNED_REAL}		{ printf("unsigned_real "); return UNSIGNED_REAL; }
+{INTEGER_CONSTANT}	{ printf("integer_constant "); return INTEGER_CONSTANT; }
+{REAL_CONSTANT}		{ printf("real_constant "); return REAL_CONSTANT; }
+{CHAR_CONSTANT}		{ printf("char_constant "); return CHAR_CONSTANT; }
 \n                      /* ignore end of line */;
 [ \t]+                  /* ignore whitespace */;
 

@@ -54,38 +54,37 @@ extern int yydebug;
     VALUE = 264,
     REFERENCE = 265,
     BEGIN_T = 266,
-    END = 267,
-    IF = 268,
-    THEN = 269,
-    ELSE = 270,
-    REPEAT = 271,
-    UNTIL = 272,
-    READ = 273,
-    WRITE = 274,
-    NOT = 275,
-    FALSE_T = 276,
-    TRUE_T = 277,
-    PONTOEVIRGULA = 278,
-    ABREPAR = 279,
-    FECHAPAR = 280,
-    DOISPONTOS = 281,
-    VIRGULA = 282,
-    MINUS = 283,
-    ASSIGNOP = 284,
-    NOT_T = 285,
-    RELOP = 286,
-    ADDOP = 287,
-    MULOP = 288,
-    LETTER = 289,
-    DIGIT = 290,
-    IDENTIFIER = 291,
-    UNSIGNED_INTEGER = 292,
-    SIGN = 293,
-    SCALE_FACTOR = 294,
-    UNSIGNED_REAL = 295,
-    INTEGER_CONSTANT = 296,
-    REAL_CONSTANT = 297,
-    CHAR_CONSTANT = 298
+    END_T = 267,
+    IF_T = 268,
+    THEN_T = 269,
+    ELSE_T = 270,
+    REPEAT_T = 271,
+    UNTIL_T = 272,
+    READ_T = 273,
+    WRITE_T = 274,
+    FALSE_T = 275,
+    TRUE_T = 276,
+    PONTOEVIRGULA = 277,
+    ABREPAR = 278,
+    FECHAPAR = 279,
+    DOISPONTOS = 280,
+    VIRGULA = 281,
+    MINUS = 282,
+    ASSIGNOP = 283,
+    NOT_T = 284,
+    RELOP = 285,
+    ADDOP = 286,
+    MULOP = 287,
+    LETTER = 288,
+    DIGIT = 289,
+    IDENTIFIER = 290,
+    UNSIGNED_INTEGER = 291,
+    SIGN = 292,
+    SCALE_FACTOR = 293,
+    UNSIGNED_REAL = 294,
+    INTEGER_CONSTANT = 295,
+    REAL_CONSTANT = 296,
+    CHAR_CONSTANT = 297
   };
 #endif
 /* Tokens.  */
@@ -98,38 +97,37 @@ extern int yydebug;
 #define VALUE 264
 #define REFERENCE 265
 #define BEGIN_T 266
-#define END 267
-#define IF 268
-#define THEN 269
-#define ELSE 270
-#define REPEAT 271
-#define UNTIL 272
-#define READ 273
-#define WRITE 274
-#define NOT 275
-#define FALSE_T 276
-#define TRUE_T 277
-#define PONTOEVIRGULA 278
-#define ABREPAR 279
-#define FECHAPAR 280
-#define DOISPONTOS 281
-#define VIRGULA 282
-#define MINUS 283
-#define ASSIGNOP 284
-#define NOT_T 285
-#define RELOP 286
-#define ADDOP 287
-#define MULOP 288
-#define LETTER 289
-#define DIGIT 290
-#define IDENTIFIER 291
-#define UNSIGNED_INTEGER 292
-#define SIGN 293
-#define SCALE_FACTOR 294
-#define UNSIGNED_REAL 295
-#define INTEGER_CONSTANT 296
-#define REAL_CONSTANT 297
-#define CHAR_CONSTANT 298
+#define END_T 267
+#define IF_T 268
+#define THEN_T 269
+#define ELSE_T 270
+#define REPEAT_T 271
+#define UNTIL_T 272
+#define READ_T 273
+#define WRITE_T 274
+#define FALSE_T 275
+#define TRUE_T 276
+#define PONTOEVIRGULA 277
+#define ABREPAR 278
+#define FECHAPAR 279
+#define DOISPONTOS 280
+#define VIRGULA 281
+#define MINUS 282
+#define ASSIGNOP 283
+#define NOT_T 284
+#define RELOP 285
+#define ADDOP 286
+#define MULOP 287
+#define LETTER 288
+#define DIGIT 289
+#define IDENTIFIER 290
+#define UNSIGNED_INTEGER 291
+#define SIGN 292
+#define SCALE_FACTOR 293
+#define UNSIGNED_REAL 294
+#define INTEGER_CONSTANT 295
+#define REAL_CONSTANT 296
+#define CHAR_CONSTANT 297
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

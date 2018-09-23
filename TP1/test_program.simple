@@ -2,8 +2,6 @@ program HelloWorld;
 
 PROCEDURE placeholder1(value char : placeholder2)
 
-begin
-	write(val)
-end
+begin write (val) end
 
 

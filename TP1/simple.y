@@ -18,15 +18,14 @@ cc lex.yy.c y.tab.c -obas.exe   # compile/link
 %token VALUE
 %token REFERENCE
 %token BEGIN_T
-%token END
-%token IF
-%token THEN
-%token ELSE
-%token REPEAT
-%token UNTIL
-%token READ
-%token WRITE
-%token NOT
+%token END_T
+%token IF_T
+%token THEN_T
+%token ELSE_T
+%token REPEAT_T
+%token UNTIL_T
+%token READ_T
+%token WRITE_T
 %token FALSE_T
 %token TRUE_T
 %token PONTOEVIRGULA
@@ -109,7 +108,7 @@ modo                :   VALUE
                     |   REFERENCE
                     ;
 
-compound_stmt       :   BEGIN_T stmt_list END
+compound_stmt       :   BEGIN_T stmt_list END_T
                     ;
 
 stmt_list           :   stmt_list PONTOEVIRGULA stmt
@@ -128,20 +127,20 @@ stmt                :   assign_stmt
 assign_stmt         :   IDENTIFIER ASSIGNOP expr
                     ;
 
-if_stmt             :   IF cond THEN stmt
-                    |   IF cond THEN stmt ELSE stmt
+if_stmt             :   IF_T cond THEN_T stmt
+                    |   IF_T cond THEN_T stmt ELSE_T stmt
                     ;
 
 cond                : expr
                     ;
 
-repeat_stmt         :   REPEAT stmt_list UNTIL expr
+repeat_stmt         :   REPEAT_T stmt_list UNTIL_T expr
                     ;
 
-read_stmt           :   READ ABREPAR ident_list FECHAPAR
+read_stmt           :   READ_T ABREPAR ident_list FECHAPAR
                     ;
 
-write_stmt          :   WRITE ABREPAR expr_list FECHAPAR
+write_stmt          :   WRITE_T ABREPAR expr_list FECHAPAR
                     ;
 
 expr_list           :   expr

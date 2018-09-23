@@ -858,157 +858,157 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 32 "simple.lex"
-{ printf("program "); }
+{ printf("program"); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 33 "simple.lex"
-{ printf("integer "); }
+{ printf("integer"); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 34 "simple.lex"
-{ printf("real "); }
+{ printf("real"); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 35 "simple.lex"
-{ printf("boolean "); }
+{ printf("boolean"); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 36 "simple.lex"
-{ printf("char "); }
+{ printf("char"); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 37 "simple.lex"
-{ printf("PROCEDURE "); }
+{ printf("PROCEDURE"); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 38 "simple.lex"
-{ printf("value "); }
+{ printf("value"); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 39 "simple.lex"
-{ printf("reference "); }
+{ printf("reference"); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 40 "simple.lex"
-{ printf("begin "); }
+{ printf("begin"); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 41 "simple.lex"
-{ printf("end "); }
+{ printf("end"); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 42 "simple.lex"
-{ printf("if "); }
+{ printf("if"); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 43 "simple.lex"
-{ printf("then "); }
+{ printf("then"); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 44 "simple.lex"
-{ printf("else "); }
+{ printf("else"); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 45 "simple.lex"
-{ printf("repeat "); }
+{ printf("repeat"); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 46 "simple.lex"
-{ printf("until "); }
+{ printf("until"); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 47 "simple.lex"
-{ printf("read "); }
+{ printf("read"); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 48 "simple.lex"
-{ printf("write "); }
+{ printf("write"); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 49 "simple.lex"
-{ printf("not "); }
+{ printf("not"); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 50 "simple.lex"
-{ printf("false "); }
+{ printf("false"); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 51 "simple.lex"
-{ printf("true "); }
+{ printf("true"); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 52 "simple.lex"
-{ printf("RELOP "); }
+{ printf("RELOP"); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 53 "simple.lex"
-{ printf("ADDOP "); }
+{ printf("ADDOP"); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 54 "simple.lex"
-{ printf("MULOP "); }
+{ printf("MULOP"); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 55 "simple.lex"
-{ printf("IDENTIFIER "); }
+{ printf("IDENTIFIER"); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 56 "simple.lex"
-{ printf("UNSIGNED_INTEGER "); }
+{ printf("UNSIGNED_INTEGER"); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 57 "simple.lex"
-{ printf("SIGN "); }
+{ printf("SIGN"); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 58 "simple.lex"
-{ printf("SCALE_FACTOR "); }
+{ printf("SCALE_FACTOR"); }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 59 "simple.lex"
-{ printf("UNSIGNED_REAL "); }
+{ printf("UNSIGNED_REAL"); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 60 "simple.lex"
-{ printf("INTEGER_CONSTANT "); }
+{ printf("INTEGER_CONSTANT"); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 61 "simple.lex"
-{ printf("REAL_CONSTANT "); }
+{ printf("REAL_CONSTANT"); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 62 "simple.lex"
-{ printf("CHAR_CONSTANT "); }
+{ printf("CHAR_CONSTANT"); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP

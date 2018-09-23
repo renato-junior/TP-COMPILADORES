@@ -57,14 +57,14 @@ tipo_retornado      :   "integer"
                     |   "real"
                     |   "boolean"
                     |   "char"
-                    |   /* empty */
+                    |   %empty/* empty */
                     ;
 
 corpo               :   ":" dec1_List ";" compound_stmt id_return
                     ;
 
 id_return           :   IDENTIFIER
-                    |   /* empty */
+                    |   %empty/* empty */
 		    ;	
 
 espec_parametros    :   "(" lista_de_parametros ")"

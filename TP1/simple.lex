@@ -29,37 +29,37 @@ CHAR_CONSTANT		"'"{LETTER}"'"
 
 %% /* Regras de Tradução */
 
-program			{ printf("program "); }
-integer			{ printf("integer "); }
-real			{ printf("real "); }
-boolean			{ printf("boolean "); }
-char			{ printf("char "); }
-PROCEDURE		{ printf("PROCEDURE "); }
-value			{ printf("value "); }
-reference		{ printf("reference "); }
-begin			{ printf("begin "); }
-end			{ printf("end "); }
-if			{ printf("if "); }
-then			{ printf("then "); }
-else			{ printf("else "); }
-repeat			{ printf("repeat "); }
-until			{ printf("until "); }
-read			{ printf("read "); }
-write			{ printf("write "); }
-not			{ printf("not "); }
-false			{ printf("false "); }
-true			{ printf("true "); }
-{RELOP}			{ printf("RELOP "); }
-{ADDOP}			{ printf("ADDOP "); }
-{MULOP}			{ printf("MULOP "); }
-{IDENTIFIER}		{ printf("IDENTIFIER "); }
-{UNSIGNED_INTEGER}	{ printf("UNSIGNED_INTEGER "); }
-{SIGN}			{ printf("SIGN "); }
-{SCALE_FACTOR}		{ printf("SCALE_FACTOR "); }
-{UNSIGNED_REAL}		{ printf("UNSIGNED_REAL "); }
-{INTEGER_CONSTANT}	{ printf("INTEGER_CONSTANT "); }
-{REAL_CONSTANT}		{ printf("REAL_CONSTANT "); }
-{CHAR_CONSTANT}		{ printf("CHAR_CONSTANT "); }
+program			{ printf("program"); }
+integer			{ printf("integer"); }
+real			{ printf("real"); }
+boolean			{ printf("boolean"); }
+char			{ printf("char"); }
+PROCEDURE		{ printf("PROCEDURE"); }
+value			{ printf("value"); }
+reference		{ printf("reference"); }
+begin			{ printf("begin"); }
+end			{ printf("end"); }
+if			{ printf("if"); }
+then			{ printf("then"); }
+else			{ printf("else"); }
+repeat			{ printf("repeat"); }
+until			{ printf("until"); }
+read			{ printf("read"); }
+write			{ printf("write"); }
+not			{ printf("not"); }
+false			{ printf("false"); }
+true			{ printf("true"); }
+{RELOP}			{ printf("RELOP"); }
+{ADDOP}			{ printf("ADDOP"); }
+{MULOP}			{ printf("MULOP"); }
+{IDENTIFIER}		{ printf("IDENTIFIER"); }
+{UNSIGNED_INTEGER}	{ printf("UNSIGNED_INTEGER"); }
+{SIGN}			{ printf("SIGN"); }
+{SCALE_FACTOR}		{ printf("SCALE_FACTOR"); }
+{UNSIGNED_REAL}		{ printf("UNSIGNED_REAL"); }
+{INTEGER_CONSTANT}	{ printf("INTEGER_CONSTANT"); }
+{REAL_CONSTANT}		{ printf("REAL_CONSTANT"); }
+{CHAR_CONSTANT}		{ printf("CHAR_CONSTANT"); }
 
 %%
 void yyerror(char const *error){

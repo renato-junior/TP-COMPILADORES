@@ -3,7 +3,7 @@ program HelloWorld;
 PROCEDURE placeholder1(value char : placeholder2)
 
 begin
-	write('Hello World.')
+	write(val)
 end
 
 

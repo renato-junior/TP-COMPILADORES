@@ -8,6 +8,7 @@
 %{ /* Declarações */
 
 #include <stdio.h>
+#include "y.tab.h"
 
 %}
 
@@ -29,37 +30,47 @@ CHAR_CONSTANT		"'"{LETTER}"'"
 
 %% /* Regras de Tradução */
 
-program			{ printf("program"); }
-integer			{ printf("integer"); }
-real			{ printf("real"); }
-boolean			{ printf("boolean"); }
-char			{ printf("char"); }
-PROCEDURE		{ printf("PROCEDURE"); }
-value			{ printf("value"); }
-reference		{ printf("reference"); }
-begin			{ printf("begin"); }
-end			{ printf("end"); }
-if			{ printf("if"); }
-then			{ printf("then"); }
-else			{ printf("else"); }
-repeat			{ printf("repeat"); }
-until			{ printf("until"); }
-read			{ printf("read"); }
-write			{ printf("write"); }
-not			{ printf("not"); }
-false			{ printf("false"); }
-true			{ printf("true"); }
-{RELOP}			{ printf("RELOP"); }
-{ADDOP}			{ printf("ADDOP"); }
-{MULOP}			{ printf("MULOP"); }
-{IDENTIFIER}		{ printf("IDENTIFIER"); }
-{UNSIGNED_INTEGER}	{ printf("UNSIGNED_INTEGER"); }
-{SIGN}			{ printf("SIGN"); }
-{SCALE_FACTOR}		{ printf("SCALE_FACTOR"); }
-{UNSIGNED_REAL}		{ printf("UNSIGNED_REAL"); }
-{INTEGER_CONSTANT}	{ printf("INTEGER_CONSTANT"); }
-{REAL_CONSTANT}		{ printf("REAL_CONSTANT"); }
-{CHAR_CONSTANT}		{ printf("CHAR_CONSTANT"); }
+program			{ return PROGRAM; }
+integer			{ return INTEGER; }
+real			{ return REAL; }
+boolean			{ return BOOLEAN; }
+char			{ return CHAR; }
+PROCEDURE		{ return PROCEDURE; }
+value			{ return VALUE; }
+reference		{ return REFERENCE; }
+begin			{ return BEGIN_T; }
+end			{ return END; }
+if			{ return IF; }
+then			{ return THEN; }
+else			{ return ELSE; }
+repeat			{ return REPEAT; }
+until			{ return UNTIL; }
+read			{ return READ; }
+write			{ return WRITE; }
+not			{ return NOT; }
+false			{ return FALSE_T; }
+true			{ return TRUE_T; }
+[;]			{ return PONTOEVIRGULA; }
+[(]			{ return ABREPAR; }
+[)]			{ return FECHAPAR; }
+[:]			{ return DOISPONTOS; }
+[,]			{ return VIRGULA; }
+[-]			{ return MINUS; }
+":="			{ return ASSIGNOP; }
+NOT			{ return NOT_T; }
+{RELOP}			{ return RELOP; }
+{ADDOP}			{ return ADDOP; }
+{MULOP}			{ return MULOP; }
+{IDENTIFIER}		{ return IDENTIFIER; }
+{UNSIGNED_INTEGER}	{ return UNSIGNED_INTEGER; }
+{SIGN}			{ return SIGN; }
+{SCALE_FACTOR}		{ return SCALE_FACTOR; }
+{UNSIGNED_REAL}		{ return UNSIGNED_REAL; }
+{INTEGER_CONSTANT}	{ return INTEGER_CONSTANT; }
+{REAL_CONSTANT}		{ return REAL_CONSTANT; }
+{CHAR_CONSTANT}		{ return CHAR_CONSTANT; }
+\n                      /* ignore end of line */;
+[ \t]+                  /* ignore whitespace */;
 
 %%
 void yyerror(char const *error){

@@ -9,7 +9,34 @@ cc lex.yy.c y.tab.c -obas.exe   # compile/link
 #include <stdio.h>
 
 %}
-
+%token PROGRAM
+%token INTEGER
+%token REAL
+%token BOOLEAN
+%token CHAR
+%token PROCEDURE
+%token VALUE
+%token REFERENCE
+%token BEGIN_T
+%token END
+%token IF
+%token THEN
+%token ELSE
+%token REPEAT
+%token UNTIL
+%token READ
+%token WRITE
+%token NOT
+%token FALSE_T
+%token TRUE_T
+%token PONTOEVIRGULA
+%token ABREPAR
+%token FECHAPAR
+%token DOISPONTOS
+%token VIRGULA
+%token MINUS
+%token ASSIGNOP
+%token NOT_T
 %token RELOP
 %token ADDOP
 %token MULOP
@@ -27,10 +54,10 @@ cc lex.yy.c y.tab.c -obas.exe   # compile/link
 
 %%
 
-program             :   "program" IDENTIFIER ";" decl_list compound_stmt
+program             :   PROGRAM IDENTIFIER PONTOEVIRGULA decl_list compound_stmt
                     ;
 
-decl_list           :   decl_list ";" decl
+decl_list           :   decl_list PONTOEVIRGULA decl
                     |   decl
                     ;
 
@@ -38,54 +65,54 @@ decl                :   dcl_var
                     |   dcl_proc
                     ;
 
-dcl_var             :   ident_list ":" type
+dcl_var             :   ident_list DOISPONTOS type
                     ;
 
-ident_list          :   ident_list "," IDENTIFIER
+ident_list          :   ident_list VIRGULA IDENTIFIER
                     |   IDENTIFIER
                     ;
         
-type                :   "integer"
-                    |   "real"
-                    |   "boolean"
-                    |   "char"
+type                :   INTEGER
+                    |   REAL
+                    |   BOOLEAN
+                    |   CHAR
                     ;
 
-dcl_proc            :   tipo_retornado "PROCEDURE" IDENTIFIER espec_parametros corpo
+dcl_proc            :   tipo_retornado PROCEDURE IDENTIFIER espec_parametros corpo
                     ;
 
-tipo_retornado      :   "integer"
-                    |   "real"
-                    |   "boolean"
-                    |   "char"
+tipo_retornado      :   INTEGER
+                    |   REAL
+                    |   BOOLEAN
+                    |   CHAR
                     |   %empty/* empty */
                     ;
 
-corpo               :   ":" decl_list ";" compound_stmt id_return
+corpo               :   DOISPONTOS decl_list PONTOEVIRGULA compound_stmt id_return
                     ;
 
 id_return           :   IDENTIFIER
                     |   %empty/* empty */
 		    ;	
 
-espec_parametros    :   "(" lista_de_parametros ")"
+espec_parametros    :   ABREPAR lista_de_parametros FECHAPAR
                     ;
 
 lista_de_parametros :   parametro
-                    |   lista_de_parametros "," parametro
+                    |   lista_de_parametros VIRGULA parametro
                     ;
 
-parametro           :   modo type ":" IDENTIFIER
+parametro           :   modo type DOISPONTOS IDENTIFIER
                     ;
 
-modo                :   "value"
-                    |   "reference"
+modo                :   VALUE
+                    |   REFERENCE
                     ;
 
-compound_stmt       :   "begin" stmt_list "end"
+compound_stmt       :   BEGIN_T stmt_list END
                     ;
 
-stmt_list           :   stmt_list   ";" stmt
+stmt_list           :   stmt_list PONTOEVIRGULA stmt
                     |   stmt
                     ;
 
@@ -98,27 +125,27 @@ stmt                :   assign_stmt
                     |   function_ref_par
                     ;
 
-assign_stmt         :   IDENTIFIER ":=" expr
+assign_stmt         :   IDENTIFIER ASSIGNOP expr
                     ;
 
-if_stmt             :   "if" cond "then" stmt
-                    |   "if" cond "then" stmt "else" stmt
+if_stmt             :   IF cond THEN stmt
+                    |   IF cond THEN stmt ELSE stmt
                     ;
 
 cond                : expr
                     ;
 
-repeat_stmt         :   "repeat" stmt_list "until" expr
+repeat_stmt         :   REPEAT stmt_list UNTIL expr
                     ;
 
-read_stmt           :   "read" "(" ident_list ")"
+read_stmt           :   READ ABREPAR ident_list FECHAPAR
                     ;
 
-write_stmt          :   "write" "(" expr_list ")"
+write_stmt          :   WRITE ABREPAR expr_list FECHAPAR
                     ;
 
 expr_list           :   expr
-                    |   expr_list "," expr
+                    |   expr_list VIRGULA expr
                     ;
 
 expr                :   Simple_expr
@@ -133,18 +160,18 @@ term                :   factor_a
                     |   term MULOP term
                     ;
 
-factor_a            :   "-" factor
+factor_a            :   MINUS factor
                     |   factor
                     ;
 
 factor              :   IDENTIFIER
                     |   constant
-                    |   "(" expr ")"
-                    |   "NOT" factor
+                    |   ABREPAR expr FECHAPAR
+                    |   NOT_T factor
                     |   function_ref_par
                     ;
 
-function_ref_par    :   variable "(" expr_list ")"
+function_ref_par    :   variable ABREPAR expr_list FECHAPAR
                     ;
 
 variable            :   Simple_variable_or_proc
@@ -159,8 +186,8 @@ constant            :   INTEGER_CONSTANT
                     |   boolean_constant
                     ;
 
-boolean_constant    :   "false"
-                    |   "true"
+boolean_constant    :   FALSE_T
+                    |   TRUE_T
                     ;
 %%
 

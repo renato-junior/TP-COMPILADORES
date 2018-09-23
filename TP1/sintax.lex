@@ -1,5 +1,11 @@
+%{ /* Declarações */
 
+#include <stdio.h>
+#include "simple.lex"
 
+%}
+
+%%
 progam              :   program identifier ";" dec1_List compound_stmt
                     ;
 
@@ -24,26 +30,26 @@ type                :   integer
                     |   char
                     ;
 
-dcl_proc            :   tipo_retornado PROCEDURE identifier espec_parametros corpo
+dcl_proc            :   tipo_retornado "PROCEDURE" identifier espec_parametros corpo
                     ;
 
 tipo_retornado      :   integer
                     |   real
                     |   boolean
                     |   char
-                    |   vazio
+                    |   /* empty */
                     ;
 
 corpo               :   ":" dec1_List ";" compound_stmt id_return
                     ;
 
 id_return           :   identifier
-                    |   vazio
+                    |   /* empty */
 
 espec_parametros    :   "(" lista_de_parametros ")"
                     ;
 
-lista_de_parametros :   parametro 
+lista_de_parametros :   parametro
                     |   lista_de_parametros "," parametro
                     ;
 
@@ -70,17 +76,17 @@ stmt                :   assign_stmt
                     |   function_ref_par
                     ;
 
-assign_stmt         :   identifier ":=" expr
+assign_stmt         :   identifier ":=" expr                    {$1 = $3}
                     ;
 
-if_stmt             :   if cond then stmt
-                    |   if cond then stmt else stmt
+if_stmt             :   "if" cond "then" stmt                   {if($2) $4}
+                    |   "if" cond "then" stmt "else" stmt       {if($2) $4 else $6}
                     ;
 
 cond                : expr
                     ;
 
-repeat_stmt         :   repeat stmt_list until expr
+repeat_stmt         :   "repeat" stmt_list "until" expr         {while($4) $$2 }
                     ;
 
 read_stmt           :   read "(" ident_list ")"
@@ -125,12 +131,13 @@ variable            :   Simple_variable_or_proc
 Simple_variable_or_proc :   identifier
                         ;
 
-constant            :   integer_constant
-                    |   real_constant
-                    |   char_constant
-                    |   boolean_constant
+constant            :   integer_constant    {const int}
+                    |   real_constant       {const float}
+                    |   char_constant       {const char}
+                    |   boolean_constant    {const int}
                     ;
 
-boolean_constant    :   "false"
-                    |   "true"
+boolean_constant    :   "false"             {false}
+                    |   "true"              {true}
                     ;
+%%

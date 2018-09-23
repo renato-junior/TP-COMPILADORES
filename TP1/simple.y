@@ -1,12 +1,32 @@
+/*
+yacc -d bas.y                   # create y.tab.h, y.tab.c
+lex bas.l                       # create lex.yy.c
+cc lex.yy.c y.tab.c -obas.exe   # compile/link
+*/
+
 %{ /* Declarações */
 
 #include <stdio.h>
-#include "simple.lex"
 
 %}
 
+%token RELOP
+%token ADDOP
+%token MULOP
+%token LETTER
+%token DIGIT
+%token IDENTIFIER
+%token UNSIGNED_INTEGER
+%token SIGN
+%token SCALE_FACTOR
+%token UNSIGNED_REAL
+%token INTEGER_CONSTANT
+%token REAL_CONSTANT
+%token CHAR_CONSTANT
+
 %%
-progam              :   program IDENTIFIER ";" dec1_List compound_stmt
+
+program             :   program IDENTIFIER ";" dec1_List compound_stmt
                     ;
 
 dec1_List           :   dec1_List ";" dec1
@@ -24,19 +44,19 @@ ident_list          :   ident_list "," IDENTIFIER
                     |   IDENTIFIER
                     ;
         
-type                :   integer
-                    |   real
-                    |   boolean
-                    |   char
+type                :   "integer"
+                    |   "real"
+                    |   "boolean"
+                    |   "char"
                     ;
 
 dcl_proc            :   tipo_retornado "PROCEDURE" IDENTIFIER espec_parametros corpo
                     ;
 
-tipo_retornado      :   integer
-                    |   real
-                    |   boolean
-                    |   char
+tipo_retornado      :   "integer"
+                    |   "real"
+                    |   "boolean"
+                    |   "char"
                     |   /* empty */
                     ;
 
@@ -45,6 +65,7 @@ corpo               :   ":" dec1_List ";" compound_stmt id_return
 
 id_return           :   IDENTIFIER
                     |   /* empty */
+		    ;	
 
 espec_parametros    :   "(" lista_de_parametros ")"
                     ;
@@ -56,11 +77,11 @@ lista_de_parametros :   parametro
 parametro           :   modo type ":" IDENTIFIER
                     ;
 
-modo                :   value
-                    |   reference
+modo                :   "value"
+                    |   "reference"
                     ;
 
-compound_stmt       :   begin stmt_list end
+compound_stmt       :   "begin" stmt_list "end"
                     ;
 
 stmt_list           :   stmt_list   ";" stmt
@@ -89,10 +110,10 @@ cond                : expr
 repeat_stmt         :   "repeat" stmt_list "until" expr         {while($4) $$2 }
                     ;
 
-read_stmt           :   read "(" ident_list ")"
+read_stmt           :   "read" "(" ident_list ")"
                     ;
 
-write_stmt          :   write "(" expr_list ")"
+write_stmt          :   "write" "(" expr_list ")"
                     ;
 
 expr_list           :   expr
@@ -134,7 +155,7 @@ Simple_variable_or_proc :   IDENTIFIER
 constant            :   INTEGER_CONSTANT    {const int}
                     |   INTEGER_CONSTANT       {const float}
                     |   CHAR_CONSTANT       {const char}
-                    |   BOOLEAN_CONSTANT    {const int}
+                    |   boolean_constant    {const int}
                     ;
 
 boolean_constant    :   "false"             {false}

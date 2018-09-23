@@ -134,7 +134,7 @@ Simple_variable_or_proc :   IDENTIFIER
 constant            :   INTEGER_CONSTANT    {const int}
                     |   INTEGER_CONSTANT       {const float}
                     |   CHAR_CONSTANT       {const char}
-                    |   boolean_constant    {const int}
+                    |   BOOLEAN_CONSTANT    {const int}
                     ;
 
 boolean_constant    :   "false"             {false}

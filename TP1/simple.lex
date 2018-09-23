@@ -16,7 +16,6 @@
 RELOP			"="|"<"|"≤"|">"|"≥"|"!="
 ADDOP			"+"|"-"|"or"
 MULOP			"*"|"/"|"div"|"mod"|"and"
-BOOLEAN_CONSTANT	"false"|"true"
 LETTER			[a-zA-Z]
 DIGIT			[0-9]
 IDENTIFIER		{LETTER}({LETTER}|{DIGIT})*
@@ -33,7 +32,6 @@ CHAR_CONSTANT		"'"{LETTER}"'"
 {RELOP}			{ printf("RELOP "); }
 {ADDOP}			{ printf("ADDOP "); }
 {MULOP}			{ printf("MULOP "); }
-{BOOLEAN_CONSTANT}	{ printf("BOOLEAN_CONSTANT "); }
 {IDENTIFIER}		{ printf("IDENTIFIER "); }
 {UNSIGNED_INTEGER}	{ printf("UNSIGNED_INTEGER "); }
 {SIGN}			{ printf("SIGN "); }

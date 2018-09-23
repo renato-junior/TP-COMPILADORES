@@ -1862,4 +1862,7 @@ void yyfree (void * ptr )
 #line 44 "simple.lex"
 
 
+void yyerror(char const *error){
+    printf("ERROR: %s!\n",error);
+}
 

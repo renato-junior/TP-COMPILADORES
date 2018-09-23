@@ -1542,3 +1542,12 @@ yyreturn:
 }
 #line 164 "simple.y" /* yacc.c:1906  */
 
+
+int yywrap(){
+    return 1;
+}
+
+int main(){
+    yyparse();
+    return 1;
+}

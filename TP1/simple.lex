@@ -42,3 +42,6 @@ CHAR_CONSTANT		"'"{LETTER}"'"
 {CHAR_CONSTANT}		{ printf("CHAR_CONSTANT "); }
 
 %%
+void yyerror(char const *error){
+    printf("ERROR: %s!\n",error);
+}

@@ -162,3 +162,12 @@ boolean_constant    :   "false"
                     |   "true"
                     ;
 %%
+
+int yywrap(){
+    return 1;
+}
+
+int main(){
+    yyparse();
+    return 1;
+}

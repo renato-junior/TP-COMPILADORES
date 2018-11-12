@@ -90,7 +90,7 @@ tipo_retornado      :   INTEGER
 corpo               :   DOISPONTOS decl_list PONTOEVIRGULA compound_stmt id_return
                     ;
 
-id_return           :   IDENTIFIER
+id_return           :   IDENTIFIER                              {return $1;}
                     |   %empty/* empty */
 		    ;	
 
@@ -118,8 +118,8 @@ stmt_list           :   stmt_list PONTOEVIRGULA stmt
 stmt                :   assign_stmt
                     |   if_stmt
                     |   repeat_stmt
-                    |   read_stmt
-                    |   write_stmt
+                    |   read_stmt                                
+                    |   write_stmt                               
                     |   compound_stmt
                     |   function_ref_par
                     ;
@@ -127,20 +127,20 @@ stmt                :   assign_stmt
 assign_stmt         :   IDENTIFIER ASSIGNOP expr
                     ;
 
-if_stmt             :   IF_T cond THEN_T stmt
-                    |   IF_T cond THEN_T stmt ELSE_T stmt
+if_stmt             :   IF_T cond THEN_T stmt                    { if($2){$4}; }
+                    |   IF_T cond THEN_T stmt ELSE_T stmt        { if($2){$4}else{$6}; }
                     ;
 
 cond                : expr
                     ;
 
-repeat_stmt         :   REPEAT_T stmt_list UNTIL_T expr
+repeat_stmt         :   REPEAT_T stmt_list UNTIL_T expr          { while($4){$2}; }
                     ;
 
-read_stmt           :   READ_T ABREPAR ident_list FECHAPAR
+read_stmt           :   READ_T ABREPAR ident_list FECHAPAR       { scanf("%c",&$$); }
                     ;
 
-write_stmt          :   WRITE_T ABREPAR expr_list FECHAPAR
+write_stmt          :   WRITE_T ABREPAR expr_list FECHAPAR       { printf("%c",$3); }
                     ;
 
 expr_list           :   expr
@@ -151,16 +151,16 @@ expr                :   Simple_expr
                     |   Simple_expr RELOP Simple_expr
                     ;
 
-Simple_expr         :   term
-                    |   Simple_expr ADDOP term
+Simple_expr         :   term                                     { $$ = $1; }
+                    |   Simple_expr ADDOP term                   { $$ = $1 + $3; }
                     ;
 
 term                :   factor_a
-                    |   term MULOP term
+                    |   term MULOP term                          { $$ = $1 * $3; }
                     ;
 
-factor_a            :   MINUS factor
-                    |   factor
+factor_a            :   MINUS factor                             { $$ = $1*$2; }
+                    |   factor                                   { $$ = $1; }
                     ;
 
 factor              :   IDENTIFIER
